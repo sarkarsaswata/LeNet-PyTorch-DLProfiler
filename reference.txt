@@ -1,0 +1,5 @@
+docker run -it -v .:/workspace --gpus all --network=host --ipc=host IMAGE_ID bash
+
+dlprof --mode=pytorch -f true --iter_start 20 --iter_stop 80 python lenet.py
+
+dlprofviewer dlprof_dldb.sqlite
